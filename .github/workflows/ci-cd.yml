@@ -63,5 +63,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             cd /home/${{ secrets.SERVER_USER }}/webserver
+            echo "MONGODB_URL=${{ secrets.MONGODB_URL }}" > backend/.env
+            echo "PORT=5555" >> backend/.env
             docker-compose pull
             docker-compose up -d --remove-orphans
