@@ -25,14 +25,14 @@ jobs:
       - name: Backend install & test
         run: |
           cd backend
-          npm ci
+          npm install
           npm test
 
       # 4. Install & test frontend
       - name: Frontend install & test
         run: |
           cd frontend
-          npm ci
+          npm install
           npm test
 
       # 5. Build frontend for production
