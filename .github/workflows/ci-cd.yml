@@ -76,5 +76,5 @@ jobs:
 
             # Restart stack
             cd /home/${{ secrets.SERVER_USER }}/webserver
-            docker compose pull
-            docker compose up -d --remove-orphans
+            docker-compose pull
+            docker-compose up -d --remove-orphans
