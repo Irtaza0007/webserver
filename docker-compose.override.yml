@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  backend:
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/mydb
+      - PORT=5555
+    command: ["npm", "start"]
+
+  frontend:
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "80:80"
+
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
